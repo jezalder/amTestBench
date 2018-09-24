@@ -1,0 +1,82 @@
+<div class="workbench-parameters">
+    <div ng-switch on="isFieldsSection">
+        <div ng-switch-when="true">
+            <h3>{{header}}<a target="_blank" href="{{headerLink}}"><i class="fa fa-link"></i></a></h3>
+            <table class="table table-hover">
+                <thead>
+                <th class="text-center">Field</th>
+                <th class="text-center">Value</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(field, value) in parametersToDisplay[sectionName]">
+                    <td>
+                        <a class="btn" ng-click="removeField(sectionName, field)"><i class="fa fa-times"/></a>
+                        <div class="inline">{{field}}</div>
+                    </td>
+                    <td><input type="number" ng-model="parametersToDisplay[sectionName][field]" ng-value="{{value}}"></td>
+                </tr>
+                <tr ng-if="parametersToDisplay.hasOwnProperty(slopName)">
+                    <td>
+                        <a class="btn" class="btn btn-default" ng-click="removeField('', slopName)"><i
+                                class="fa fa-times"/></a>
+                        <div class="inline">{{slopLabel}}<a target="_blank" href="{{slopLink}}"><i
+                                class="fa fa-link"></i></a></div>
+                    </td>
+                    <td><input type="number" ng-model="parametersToDisplay[slopName]" ng-value="{{parametersToDisplay[slopName]}}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-switch-default>
+            <h3>{{header}}</h3>
+            <table class="table table-hover">
+                <thead>
+                <th class="text-center">Field</th>
+                <th class="text-center">Value</th>
+                </thead>
+                <tbody>
+                <tr ng-if="parametersToDisplay.hasOwnProperty('tieBreaker')">
+                    <td>
+                        <a class="btn" ng-click="removeField('', 'tieBreaker')"><i class="fa fa-times"/></a>
+                        <div class="inline">Tie Breaker <a target="_blank"
+                                                           href="https://wiki.apache.org/solr/ExtendedDisMax#tie_.28Tie_breaker.29"><i
+                                class="fa fa-link"></i></a></div>
+                    </td>
+                    <td><input type="number" ng-model="parametersToDisplay.tieBreaker"
+                               ng-value="{{parametersToDisplay.tieBreaker}}"></td>
+                </tr>
+                <tr ng-if="parametersToDisplay.hasOwnProperty('minimumMatch')">
+                    <td>
+                        <a class="btn" ng-click="removeField('', 'minimumMatch')"><i class="fa fa-times"/></a>
+                        <div class="inline">Minimum 'Should' Match <a target="_blank"
+                                                                      href="https://wiki.apache.org/solr/ExtendedDisMax#mm_.28Minimum_.27Should.27_Match.29"><i
+                                class="fa fa-link"></i></a></div>
+                    </td>
+                    <td><input type="text" ng-model="parametersToDisplay.minimumMatch"
+                               ng-value="{{parametersToDisplay.minimumMatch}}"></td>
+                </tr>
+                <tr ng-if="parametersToDisplay.hasOwnProperty('lowercaseOperators')">
+                    <td>
+                        <a class="btn" ng-click="removeField('', 'lowercaseOperators')"><i class="fa fa-times"/></a>
+                        <div class="inline">Lowercase Operators <a target="_blank"
+                                                                   href="https://wiki.apache.org/solr/ExtendedDisMax#lowercaseOperators"><i
+                                class="fa fa-link"></i></a></div>
+                    </td>
+                    <td><input type="checkbox" ng-model="parametersToDisplay.lowercaseOperators"
+                               ng-value="{{parametersToDisplay.lowercaseOperators}}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <a class="btn btn-default" ng-click="showFieldModal()"><i class="fa fa-plus"/> Add field</a>
+
+    <div id="parametersmodal{{panel}}{{sectionName}}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <els-parameters-grid></els-parameters-grid>
+            </div>
+        </div>
+    </div>
+</div>

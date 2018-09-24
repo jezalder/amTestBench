@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Elsevier DataSearch</title>
+
+		<meta name="description" content="Elsevier DataSearch">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/datasearch.css">
+    <link rel="stylesheet" href="../css/daterange.css">
+    <link rel="stylesheet" href="../css/facet.css">
+    <link rel="stylesheet" href="../css/fileset-preview.css">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/result.css">
+    <link rel="stylesheet" href="../css/usermenu.css">
+    <link rel="stylesheet" href="../css/workbench-parameters.css">
+    <link rel="stylesheet" href="../css/workbench.css">
+
+		<!--
+		Include the following JavaScript file so older browsers can render the HTML5 elements properly
+		-->
+
+		<script type="text/javascript" src="js/html5.js"></script>
+
+	</head>
+	<body>
+
+		<div class="text-center container containerLanding3">
+
+      <div class="user-menu-right">
+        <els-user-menu>
+          <div class="user-menu">
+            <div class="btn-group">
+              <em class="ng-binding">ds-admin</em>
+              <a class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                  </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <!-- ngRepeat: l in links -->
+                <li ng-repeat="l in links" class="ng-scope"><a ng-href="/indexed#/home" class="ng-binding" href="/indexed#/home">DataSearch Home</a></li>
+                <!-- end ngRepeat: l in links -->
+                <li ng-repeat="l in links" class="ng-scope"><a ng-href="/admin#/workbench" class="ng-binding" href="/admin#/workbench">Relevancy Workbench</a></li>
+                <!-- end ngRepeat: l in links -->
+                <li ng-repeat="l in links" class="ng-scope"><a ng-href="/admin#/config" class="ng-binding" href="/admin#/config">Manage Configuration</a></li>
+                <!-- end ngRepeat: l in links -->
+                <li ng-repeat="l in links" class="ng-scope"><a ng-href="/logout.html" class="ng-binding" href="/logout.html">Logout</a></li><!-- end ngRepeat: l in links -->
+              </ul>
+            </div>
+          </div>
+        </els-user-menu>
+      </div>
+
+      <div class="allbarfoot">
+          <img id="datasearch" src="../dsland.png" alt="Elsevier DataSearch">
+      </div>
+
+      <div>
+          <form novalidate ng-submit="search(terms)" role="search">
+
+                  <div class="input-group DSform">
+                      <input type="text" ng-model="terms" class="form-control" placeholder="Find research data" autofocus>
+                      <div class="input-group-btn">
+                          <button type="submit" class="btn btn-primary DSsearchBtn"><i class="fa fa-search"></i></button>
+                      </div>
+                  </div>
+
+          </form>
+      </div>
+
+      <div class="calltoa">
+          Search for research data across domains and types, and across a multitude of domain-specific, cross-domain and institutional data repositories.
+      </div>
+
+
+			<div class="push"></div>
+
+		</div>
+
+		<footer class="DSfootcontain">
+      <div class="feedback">
+        <div class="fbstrap">DataSearch is in development. We welcome your feedback and ideas to help us improve.</div>
+        <div class="fbbuttons"><button type="submit" class="btn btn-primary DSfbBtn">Give Feedback</button><button type="submit" class="btn btn-primary DSfbBtn">Join Our User Panel</button></div>
+      </div> <!-- end feedback div -->
+
+      <div class="container DSfooter">
+        <img id="ElsevierLand" src="../elsevier.png" alt="Elsevier">
+        <img id="relx" src="../relx.png" alt="RELX Group">
+        <ul>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="http://elsevier.com/locate/termsandconditions">Terms of Use</a></li>
+          <li><a href="http://elsevier.com/privacypolicy">Privacy Policy</a></li>
+          <li>Copyright &copy; 2016 Elsevier B.V.</li>
+        </ul>
+
+
+      </div> <!-- end DSfooter div -->
+    </footer>
+
+
+		<!-- Social Media and Website Tracking Scripts -->
+
+
+		<script type="text/javascript">
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-271290-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+
+	</body>
+</html>

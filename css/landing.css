@@ -1,0 +1,54 @@
+img#datasearch {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 240px;
+}
+
+img#datasearchBeta {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 280px;
+}
+
+img#datasearchBeta2 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 280px;
+}
+
+@media screen and (min-width: 870px) {
+  img#datasearch {
+      margin-top: 70px;
+      margin-bottom: 70px;
+      width: 300px;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  img#datasearchBeta {
+      margin-top: 100px;
+      margin-bottom: 70px;
+      width: 340px;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  img#datasearchBeta2 {
+      margin-top: 70px;
+      margin-bottom: 70px;
+      width: 340px;
+  }
+}
+
+img#ElsevierLand {
+    width: 97px;
+    height: 15px;
+    margin-top: 7px;
+    float: left;
+}
+
+img#relx {
+    width: 126px;
+    height: 25px;
+    float: right;
+}

@@ -1,0 +1,70 @@
+.workbench-container{
+    display: inline;
+}
+
+.workbench-container-search{
+    margin-top: 35px;
+}
+
+.config-selector {
+    width: 75%;
+}
+
+.workbench-removal-button {
+    padding: 5px;
+    width: 8%;
+    height: 50%;
+}
+
+button.inline {
+    float: right;
+}
+
+.workbench-results {
+    margin-top: 20px;
+}
+
+.search-bar {
+    flex-grow: 1;
+}
+
+.group-width {
+    width: 100%;
+}
+
+div.workbench-explain span.score {
+    font-style: italic;
+    max-height: 310em;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    overflow-y: hidden;
+}
+
+div.workbench-explain span.explain-toggle {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+div.workbench-explain {
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+table.workbench-explain {
+    margin-top: 8px;
+    border: lightgray;
+}
+
+th.workbench-explain {
+    background-color: #337ab7;
+    color: #FFFFFF;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+pre.workbench-explain {
+    background-color: transparent;
+    margin: 0px;
+    white-space: pre-wrap;
+    border: none;
+}

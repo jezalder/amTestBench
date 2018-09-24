@@ -1,0 +1,47 @@
+
+.user-menu {
+    font-size: 14px;
+    margin-top: 6px;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 870px) {
+  .user-menu {
+      font-size: 20px;
+      margin-top: 6px;
+      -webkit-font-smoothing: antialiased;
+  }
+}
+
+.user-menu em {
+    font-style: normal;
+    margin-right: 4px;
+    color: #777;
+}
+
+.user-menu ul {
+  padding: 15px 0 15px 0;
+}
+
+.user-menu li {
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  padding: 3px 0 3px 0;
+}
+
+.user-menu a {
+    box-shadow: none !important;
+}
+
+.user-menu-right {
+    float: right;
+    margin: 24px 30px;
+}
+
+.user-menu-right em {
+    color: white;
+}
+
+.dropdown-menu-land {
+    font-size: 1.2em;
+}

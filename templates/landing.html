@@ -1,0 +1,86 @@
+
+
+<div class="text-center container containerLanding">
+  <div class="user-menu-right">
+    <els-user-menu>
+      <div class="user-menu">
+        <div class="btn-group">
+          <em class="ng-binding">ds-admin</em>
+          <a class="dropdown-toggle" data-toggle="dropdown">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+              </span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <!-- ngRepeat: l in links -->
+            <li ng-repeat="l in links" class="ng-scope"><a ng-href="/indexed#/home" class="ng-binding" href="/indexed#/home">DataSearch Home</a></li>
+            <!-- end ngRepeat: l in links -->
+            <li ng-repeat="l in links" class="ng-scope"><a ng-href="/admin#/workbench" class="ng-binding" href="/admin#/workbench">Relevancy Workbench</a></li>
+            <!-- end ngRepeat: l in links -->
+            <li ng-repeat="l in links" class="ng-scope"><a ng-href="/admin#/config" class="ng-binding" href="/admin#/config">Manage Configuration</a></li>
+            <!-- end ngRepeat: l in links -->
+            <li ng-repeat="l in links" class="ng-scope"><a ng-href="/logout.html" class="ng-binding" href="/logout.html">Logout</a></li><!-- end ngRepeat: l in links -->
+          </ul>
+        </div>
+      </div>
+    </els-user-menu>
+  </div>
+
+  <div class="allbarfoot">
+    <div class="row">
+        <img id="datasearch" src="/dsland.png" alt="Elsevier DataSearch">
+    </div>
+
+    <div class="row">
+        <form novalidate ng-submit="search(terms)" role="search">
+
+                <div class="input-group DSform">
+                    <input type="text" ng-model="terms" class="form-control" placeholder="Find research data" autofocus>
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-primary DSsearchBtn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+
+        </form>
+    </div>
+
+    <div class="row">
+      <div class="calltoa">
+        Search for research data across domains and types, and across a multitude of domain-specific, cross-domain and institutional data repositories.
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+  </div>
+  <div class="pushDSland"></div>
+
+  <div class="DSfootcontain">
+
+    <div class="feedback">
+      <div class="fbstrap">DataSearch is in development. We welcome your feedback and ideas to help us improve.</div>
+      <div class="fbbuttons"><button type="submit" class="btn btn-primary DSfbBtn">Give Feedback</button><button type="submit" class="btn btn-primary DSfbBtn">Join Our User Panel</button></div>
+    </div> <!-- end feedback div -->
+
+    <div class="container DSfooter">
+      <div class="DSfootnav"><img id="ElsevierLand" src="/elsevier.png" alt="Elsevier"></div>
+      <div class="footerNav">
+        <ul>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="http://elsevier.com/locate/termsandconditions">Terms of Use</a></li>
+          <li><a href="http://elsevier.com/privacypolicy">Privacy Policy</a></li>
+          <li>Copyright &copy; 2016 Elsevier B.V.</li>
+        </ul>
+      </div>
+      <div class="relx"><img id="relx" src="/relx.png" alt="RELX Group"></div>
+    </div> <!-- end DSfooter div -->
+
+  </div> <!-- end DSfootcontain div -->

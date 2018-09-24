@@ -1,0 +1,35 @@
+div.date-range label {
+    font-weight: 400;
+    width: 40px;
+    margin-left: -5px;
+}
+
+div.date-range input[type=text] {
+    font-size: .9em;
+    width: 112px;
+}
+
+div.date-range img {
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    vertical-align: initial;
+    margin-left: 2px;
+}
+
+div.date-range div.form-group {
+    padding-bottom: 8px;
+}
+
+div.date-range .btn-apply {
+    background-image: url(/apply-button.png);
+    background-color: transparent;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    border: 0;
+    outline: 0;
+}

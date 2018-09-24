@@ -1,0 +1,98 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+div.input-group-btn a.btn {
+    margin-top: 8px;
+}
+
+.navbar-header a img {
+    width: 195px;
+    height: 30px;
+    margin: 0 44px 0 15px;
+}
+
+.dropdown-menu span.checkbox {
+    margin-left: 8px;
+    cursor: default;
+}
+
+.nav a:hover, .open>a, .open>a:hover {
+    color: #333;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav a {
+    text-decoration: none;
+    padding: 16px 8px;
+}
+
+.nav a i {
+    margin: 16px 0 16px 8px;
+    padding-right: 8px;
+}
+
+.nav, .pagination, .panel-title a {
+    cursor: pointer;
+}
+
+.search {
+    padding: 15px 0;
+}
+
+.search > .container-fluid {
+    display: flex;
+}
+
+nav.navbar.navbar-default.settings {
+    background: white;
+}
+
+.navbar-default .navbar-nav a {
+    color: #777;
+}
+
+.navbar-default .navbar-nav a.btn-primary {
+    color: #fff;
+}
+
+#search-form {
+    flex-grow: 1;
+}
+
+#search-form > .input-group {
+    width: 100%;
+}
+
+li.dropdown {
+    min-width: 13em;
+}
+
+li.dropdown-item > a {
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.navbar a.btn {
+    margin-top: 1ex;
+}
+
+.form-control {
+    padding: 22px 18px;
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #666;
+    border: 1px solid #BBBDBF;
+    border-radius: 0px;
+}
+
+.DSsearchBtn {
+    padding: 7px 14px;
+    font-size: 21px;
+    line-height: 1.42857143;
+    border: 1px solid #23A9E1;
+    background-color: #23A9E1;
+    border-radius: 2px;
+}

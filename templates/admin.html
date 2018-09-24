@@ -1,0 +1,161 @@
+<div>
+    <div class="search-header">
+        <nav class="navbar navbar-default search" role="navigation">
+            <div class="container">
+            <div class="nav navbar-header">
+                <a ng-href="#/" class="navbar-brand"><img src="/logo.png" alt="Elsevier DataSearch"></a>
+            </div>
+            <div class="pull-right">
+                <els-user-menu></els-user-menu>
+            </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-4 text-center">
+                <h3>Query Fields <a target="_blank"
+                       href="https://wiki.apache.org/solr/ExtendedDisMax#qf_.28Query_Fields.29"><i class="fa fa-link"></i></a></h3>
+                <table class="table table-hover">
+                    <thead>
+                    <th class="text-center">Field</th>
+                    <th class="text-center">Boost</th>
+                    <th class="text-center">Value</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="field in indexedFields">
+                        <td>{{field}}</td>
+                        <td><input align="right" type="checkbox"
+                                   ng-click="qfBoostValue[field] = undefined"
+                                   ng-checked="qfBoostValue[field] != undefined"></td>
+                        <td><input type="number" ng-model="qfBoostValue[field]" value="qfBoostValue[field]"></td>
+                    </tr>
+                    <tr>
+                        <td>Query Slop <a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#qs_.28Query_Phrase_Slop.29"><i class="fa fa-link"></i></a></td>
+                        <td/>
+                        <td><input type="number" ng-model="querySlop" value="querySlop"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 text-center">
+                <h3>Phrase Fields <a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#pf_.28Phrase_Fields.29"><i class="fa fa-link"></i></a></h3>
+                <table class="table table-hover">
+                    <thead>
+                    <th class="text-center">Field</th>
+                    <th class="text-center">Boost</th>
+                    <th class="text-center">Value</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="field in indexedFields">
+                        <td>{{field}}</td>
+                        <td><input align="right" type="checkbox"
+                                   ng-click="pfBoostValue[field] = undefined"
+                                   ng-checked="pfBoostValue[field] != undefined"></td>
+                        <td><input type="number" ng-model="pfBoostValue[field]"></td>
+                    </tr>
+                    <tr>
+                        <td>Phrase Slop <a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#ps_.28Phrase_Slop.29"><i class="fa fa-link"></i></a></td>
+                        <td/>
+                        <td><input type="number" ng-model="phraseSlop" value="phraseSlop"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 text-center">
+                <h3>Phrase Bigram Fields<a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#pf2_.28Phrase_bigram_fields.29"><i class="fa fa-link"></i></a></h3>
+                <table class="table table-hover">
+                    <thead>
+                    <th class="text-center">Field</th>
+                    <th class="text-center">Boost</th>
+                    <th class="text-center">Value</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="field in indexedFields">
+                        <td>{{field}}</td>
+                        <td><input align="right" type="checkbox"
+                                   ng-click="pf2BoostValue[field] = undefined"
+                                   ng-checked="pf2BoostValue[field] != undefined"></td>
+                        <td><input type="number" ng-model="pf2BoostValue[field]"></td>
+                    </tr>
+                    <tr>
+                        <td>Phrase Bigram Slop<a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#ps2_.28Phrase_bigram_slop.29"><i class="fa fa-link"></i></a></td>
+                        <td/>
+                        <td><input type="number" ng-model="phraseSlop2" value="phraseSlop2"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-4 text-center">
+                <h3>Phrase Trigram Fields<a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#pf3_.28Phrase_trigram_fields.29"><i class="fa fa-link"></i></a></h3>
+                <table class="table table-hover">
+                    <thead>
+                    <th class="text-center">Field</th>
+                    <th class="text-center">Boost</th>
+                    <th class="text-center">Value</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="field in indexedFields">
+                        <td>{{field}}</td>
+                        <td><input align="right" type="checkbox"
+                                   ng-click="pf3BoostValue[field] = undefined"
+                                   ng-checked="pf3BoostValue[field] != undefined"></td>
+                        <td><input type="number" ng-model="pf3BoostValue[field]"></td>
+                    </tr>
+                    <tr>
+                        <td>Phrase Trigram Slop<a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#ps3_.28Phrase_trigram_slop.29"><i class="fa fa-link"></i></a></td>
+                        <td/>
+                        <td><input type="number" ng-model="phraseSlop3" value="phraseSlop3"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 text-center">
+                <h3>Parameters</h3>
+                <table class="table table-hover">
+                    <thead>
+                    <th class="text-center">Parameter</th>
+                    <th class="text-center">Value</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Tie Breaker <a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#tie_.28Tie_breaker.29"><i class="fa fa-link"></i></a></td>
+                        <td><input type="number" ng-model="tieBreaker"></td>
+                    </tr>
+                    <tr>
+                        <td>Minimum 'Should' Match <a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#mm_.28Minimum_.27Should.27_Match.29"><i class="fa fa-link"></i></a></td>
+                        <td><input type="text" ng-model="minimumMatch"></td>
+                    </tr>
+                    <tr>
+                        <td>Lowercase Operators <a target="_blank" href="https://wiki.apache.org/solr/ExtendedDisMax#lowercaseOperators"><i class="fa fa-link"></i></a></td>
+                        <td><input type="checkbox" ng-model="lowercaseOperators"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <button class="btn btn-primary" ng-click="saveParams()">Save</button>
+                <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content" id="save-settings">
+                <div class="modal-body text-center">
+                    <h4>{{modalMessage}}</h4>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

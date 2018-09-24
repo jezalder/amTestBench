@@ -1,0 +1,85 @@
+div.fileset {
+    font-family: sans-serif;
+    width: 100%;
+    overflow: auto;
+}
+
+div.fileset div.header span {
+    background: #9e9e9e;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 50%;
+    float: left;
+    margin-inside: 2px 2px 2px 2px;
+}
+
+div.fileset ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+div.fileset ul li span {
+    margin-top: 4px;
+    background: #e0e0e0;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.fileset ul li:nth-child(odd) span {
+    background: white;
+}
+
+span.filename {
+    width: 80%;
+}
+
+span.size {
+    width: 20%;
+    text-align: right;
+}
+
+span.glyphicon {
+    width: 20px;
+}
+
+div.truncated {
+    position: relative;
+    bottom: 4em;
+    height: 4em;
+    line-height: 6em;
+    width: 100%;
+    background: -webkit-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -moz-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -o-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+    );
+    background-image: linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -ms-linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+    );
+}
+
+div.truncated span {
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: normal;
+}
+
+div.alert-info {
+    margin-top: -2.5em;
+    padding: 5px;
+    width:450px;
+}

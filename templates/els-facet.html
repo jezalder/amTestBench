@@ -1,0 +1,12 @@
+<div class="facet-box" ng-show="items.length > 0">
+    <h4 class="left-column">{{facetTitle}}</h4>
+
+    <div class="left-column" ng-repeat="i in items | orderBy : 'count' | orderBy : 'active' : true">
+        <div ng-click="i.active || toggleFilter(i);" class="facet-item" ng-class="i.active ? 'applied' : 'unapplied'">
+            <div ng-model="i.active" class="facet-label"><span>{{i.label}} ({{i.count}})</span></div>
+            <div id="unapply" ng-show="i.active">
+                <a ng-click="toggleFilter(i);$event.stopPropagation();"><img src="/remove-button.png" width="22px" height="22px"/></a>
+            </div>
+        </div>
+    </div>
+</div>

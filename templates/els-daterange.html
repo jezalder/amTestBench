@@ -1,0 +1,19 @@
+<div class="facet-box date-range" ng-show="minDate">
+    <h4 class="left-column">Date</h4>
+
+    <div class="left-column">
+        <form class="form-inline" ng-submit="applyDates()">
+            <div class="form-group" ng-class="{'has-warning': failed.from, 'has-feedback': failed.from}">
+                <label>From</label>
+                <input type="text" class="form-control" ng-model="date.from" placeholder="{{minDate | date : ISO_DATE_FORMAT}}">
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" ng-show="failed.from"></span>
+            </div>
+            <div class="form-group" ng-class="{'has-warning': failed.to, 'has-feedback': failed.to}">
+                <label>To</label>
+                <input type="text" class="form-control" ng-model="date.to" placeholder="{{maxDate | date : ISO_DATE_FORMAT}}">
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" ng-show="failed.to"></span>
+            </div>
+            <button type="submit" class="btn-apply"></button>
+        </form>
+    </div>
+</div>

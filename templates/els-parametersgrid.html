@@ -1,0 +1,19 @@
+<div class="modal-body">
+    <div>
+        <div>Select a parameter
+            <span class="pull-right">
+                <a data-toggle="modal">
+                    <i class="fa fa-times" data-dismiss="modal"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+    <br/>
+    <div ui-grid="gridOptions" ui-grid-selection ui-grid-auto-resize class="grid"></div>
+</div>
+<div class="modal-footer">
+    <div class="text-center">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="selectParameter()">Select</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    </div>
+</div>

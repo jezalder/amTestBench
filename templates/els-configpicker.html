@@ -1,0 +1,12 @@
+<div class="workbench-container">
+    <input type="text" class="config-selector" ng-model= "selectedConfig.displayName" ng-change="registerNameChange()">
+    <button id="showOptions" ng-click="showModalSelector(panel)" class="btn btn-default"><i class="fa fa-bars"/></button>
+    <div id="modal{{panel}}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <els-grid-selector></els-grid-selector>
+            </div>
+        </div>
+    </div>
+</div>
+

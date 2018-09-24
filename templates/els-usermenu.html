@@ -1,0 +1,14 @@
+<div class="user-menu user-menu-land">
+    <div class="btn-group">
+        <em>{{userName}}</em>
+        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li ng-repeat="l in links"><a ng-href="{{l.href}}">{{l.title}}</a></li>
+        </ul>
+    </div>
+</div>
