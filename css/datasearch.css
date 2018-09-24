@@ -65,26 +65,26 @@ table {
 
 @font-face {
   font-family: "NexusSans";
-  src: url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Regular.eot");
-  src: url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Regular.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Regular.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Regular.ttf") format("truetype");
+  src: url("..fonts/NexusSansPro-Regular.eot");
+  src: url("..fonts/NexusSansPro-Regular.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Regular.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;}
 @font-face {
   font-family: "NexusSans";
-  src: url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Italic.eot");
-  src: url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Italic.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Italic.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Italic.ttf") format("truetype");
+  src: url("..fonts/NexusSansPro-Italic.eot");
+  src: url("..fonts/NexusSansPro-Italic.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Italic.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Italic.ttf") format("truetype");
   font-style: italic;
   font-weight: normal; }
 @font-face {
   font-family: "NexusSans";
-  src: url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Bold.eot");
-  src: url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Bold.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Bold.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Bold.ttf") format("truetype");
+  src: url("..fonts/NexusSansPro-Bold.eot");
+  src: url("..fonts/NexusSansPro-Bold.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Bold.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700; }
 @font-face {
   font-family: "NexusSans";
-  src: url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-BoldItalic.eot");
-  src: url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-BoldItalic.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-BoldItalic.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-BoldItalic.ttf") format("truetype");
+  src: url("..fonts/NexusSansPro-BoldItalic.eot");
+  src: url("..fonts/NexusSansPro-BoldItalic.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-BoldItalic.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/19623718/tempFonts/NexusSansPro-BoldItalic.ttf") format("truetype");
   font-style: italic;
   font-weight: 700; }
 
