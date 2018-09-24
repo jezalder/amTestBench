@@ -1,0 +1,190 @@
+<div>
+
+    <!--Search header-->
+    <div class="search-header">
+        <nav class="navbar navbar-default search" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a ng-href="#/" class="navbar-brand"><img src="/logo.png" alt="Elsevier DataSearch"></a>
+                </div>
+                <div class="navbar-form navbar-left search-bar">
+                    <div class="input-group group-width">
+                        <input type="text" ng-model="query.terms" id="search-terms"
+                               ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 200, 'blur': 0 } }"
+                               class="form-control" placeholder="Find research datasets from a variety of sources"
+                               autofocus>
+
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-primary" ng-click="search(query.terms)" ng-disabled="isSearchDisabled()"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <els-user-menu></els-user-menu>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <!--Config selector-->
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6 workbench-container-search">
+                <els-config-picker panel="A" selected-config="selectedConfigA" parameters-form="workbench.parametersFormA"></els-config-picker>
+                <button class="btn btn-primary"
+                        ng-click="saveConfiguration(selectedConfigA.displayName, parametersToDisplay[selectedConfigA.name])"
+                        parameters-to-add="parametersAvailableForAddition[selectedConfigA.name])" class="pull-right">
+                    Save Configuration
+                </button>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6 workbench-container-search">
+                <els-config-picker panel="B" selected-config="selectedConfigB" parameters-form="workbench.parametersFormB"></els-config-picker>
+                <button class="btn btn-primary"
+                        ng-click="saveConfiguration(selectedConfigB.displayName, parametersToDisplay[selectedConfigB.name])"
+                        parameters-to-add="parametersAvailableForAddition[selectedConfigA.name])" class="pull-right">
+                    Save Configuration
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div ng-show="showPanelParameters(selectedConfigA)">
+                    <form name="workbench.parametersFormA" ng-model="parametersFormA" validate>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormA" panel="A"
+                                                          is-fields-section="true" header="Query Fields "
+                                                          header-link="https://wiki.apache.org/solr/ExtendedDisMax#qf_.28Query_Fields.29"
+                                                          parameters-to-display="parametersToDisplay[selectedConfigA.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigA.name]"
+                                                          section-name="queryFields"
+                                                          slop-name="querySlop" slop-label="Query Slop"
+                                                          slop-link="https://wiki.apache.org/solr/ExtendedDisMax#qs_.28Query_Phrase_Slop.29">
+                        </els-workbench-parameters-section>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormA" panel="A"
+                                                          is-fields-section="true" header="Phrase Fields "
+                                                          header-link="https://wiki.apache.org/solr/ExtendedDisMax#pf_.28Phrase_Fields.29"
+                                                          parameters-to-display="parametersToDisplay[selectedConfigA.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigA.name]"
+                                                          section-name="phraseFields"
+                                                          slop-name="phraseSlop" slop-label="Phrase Slop"
+                                                          slop-link="https://wiki.apache.org/solr/ExtendedDisMax#ps_.28Phrase_Slop.29">
+                        </els-workbench-parameters-section>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormA" panel="A"
+                                                          is-fields-section="true" header="Phrase Bigram Fields "
+                                                          header-link="https://wiki.apache.org/solr/ExtendedDisMax#pf2_.28Phrase_bigram_fields.29"
+                                                          parameters-to-display="parametersToDisplay[selectedConfigA.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigA.name]"
+                                                          section-name="phraseFields2"
+                                                          slop-name="phraseSlop2" slop-label="Phrase Bigram Slop"
+                                                          slop-link="https://wiki.apache.org/solr/ExtendedDisMax#ps2_.28Phrase_bigram_slop.29">
+                        </els-workbench-parameters-section>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormA" panel="A"
+                                                          is-fields-section="true" header="Phrase Trigram Fields "
+                                                          header-link="https://wiki.apache.org/solr/ExtendedDisMax#pf3_.28Phrase_trigram_fields.29"
+                                                          parameters-to-display="parametersToDisplay[selectedConfigA.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigA.name]"
+                                                          section-name="phraseFields3"
+                                                          slop-name="phraseSlop3" slop-label="Phrase Trigram Slop"
+                                                          slop-link="https://wiki.apache.org/solr/ExtendedDisMax#ps3_.28Phrase_trigram_slop.29">
+                        </els-workbench-parameters-section>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormA" panel="A"
+                                                          is-fields-section="false" header="Parameters "
+                                                          parameters-to-display="parametersToDisplay[selectedConfigA.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigA.name]"
+                                                          section-name="parameters">
+                        </els-workbench-parameters-section>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div ng-show="showPanelParameters(selectedConfigB)">
+                    <form name="workbench.parametersFormB" ng-model="parametersFormB" validate>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormB" panel="B"
+                                                          is-fields-section="true" header="Query Fields "
+                                                          header-link="https://wiki.apache.org/solr/ExtendedDisMax#qf_.28Query_Fields.29"
+                                                          parameters-to-display="parametersToDisplay[selectedConfigB.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigB.name]"
+                                                          section-name="queryFields"
+                                                          slop-name="querySlop" slop-label="Query Slop"
+                                                          slop-link="https://wiki.apache.org/solr/ExtendedDisMax#qs_.28Query_Phrase_Slop.29">
+                        </els-workbench-parameters-section>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormB" panel="B"
+                                                          is-fields-section="true" header="Phrase Fields "
+                                                          header-link="https://wiki.apache.org/solr/ExtendedDisMax#pf_.28Phrase_Fields.29"
+                                                          parameters-to-display="parametersToDisplay[selectedConfigB.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigB.name]"
+                                                          section-name="phraseFields"
+                                                          slop-name="phraseSlop" slop-label="Phrase Slop"
+                                                          slop-link="https://wiki.apache.org/solr/ExtendedDisMax#ps_.28Phrase_Slop.29">
+                        </els-workbench-parameters-section>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormB" panel="B"
+                                                          is-fields-section="true" header="Phrase Bigram Fields "
+                                                          header-link="https://wiki.apache.org/solr/ExtendedDisMax#pf2_.28Phrase_bigram_fields.29"
+                                                          parameters-to-display="parametersToDisplay[selectedConfigB.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigB.name]"
+                                                          section-name="phraseFields2"
+                                                          slop-name="phraseSlop2" slop-label="Phrase Bigram Slop"
+                                                          slop-link="https://wiki.apache.org/solr/ExtendedDisMax#ps2_.28Phrase_bigram_slop.29">
+                        </els-workbench-parameters-section>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormB" panel="B"
+                                                          is-fields-section="true" header="Phrase Trigram Fields "
+                                                          header-link="https://wiki.apache.org/solr/ExtendedDisMax#pf3_.28Phrase_trigram_fields.29"
+                                                          parameters-to-display="parametersToDisplay[selectedConfigB.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigB.name]"
+                                                          section-name="phraseFields3"
+                                                          slop-name="phraseSlop3" slop-label="Phrase Trigram Slop"
+                                                          slop-link="https://wiki.apache.org/solr/ExtendedDisMax#ps3_.28Phrase_trigram_slop.29">
+                        </els-workbench-parameters-section>
+                        <els-workbench-parameters-section parameters-form="workbench.parametersFormB" panel="B"
+                                                          is-fields-section="false" header="Parameters "
+                                                          parameters-to-display="parametersToDisplay[selectedConfigB.name]"
+                                                          parameters-to-add="parametersAvailableForAddition[selectedConfigB.name]"
+                                                          section-name="parameters">
+                        </els-workbench-parameters-section>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6 workbench-results">
+                <h3>Search results</h3>
+
+                <div id="search-results-and-preview-A" class="row">
+                    <div id="search-results-A">
+                        <els-result ng-repeat="result in pageOfResults[selectedConfigA.displayName].results"
+                                              result="result"
+                                              explain="pageOfResults[selectedConfigA.displayName].explain"
+                                              toggle="false"
+                                              workbench="true"></els-result>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6 workbench-results">
+                <h3>Search results</h3>
+
+                <div id="search-results-and-preview-B" class="row">
+                    <div id="search-results-B">
+                        <els-result ng-repeat="result in pageOfResults[selectedConfigB.displayName].results"
+                                              result="result"
+                                              explain="pageOfResults[selectedConfigB.displayName].explain"
+                                              toggle="false"
+                                              workbench="true"></els-result>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="workbenchmodal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h4>{{modalMessage}}</h4>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

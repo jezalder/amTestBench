@@ -1,0 +1,93 @@
+<div els-scroll on-scroll="nextPage">
+    <div class="search-header">
+        <nav class="navbar navbar-default search" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a ng-href="#/" class="navbar-brand"><img src="/logo.png" alt="Elsevier DataSearch"></a>
+                </div>
+                <form novalidate ng-submit="search(query.terms)" class="navbar-form navbar-left" role="search"
+                      id="search-form">
+                    <div class="input-group">
+                        <input type="text" ng-model="query.terms" id="search-terms"
+                               ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 200, 'blur': 0 } }"
+                               class="form-control" placeholder="Find research datasets from a variety of sources"
+                               autofocus>
+
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-primary DSsearchBtn"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <els-user-menu></els-user-menu>
+            </div>
+        </nav>
+    </div>
+    <div class="paging container" ng-cloak>
+        <div class="row result-header">
+            <div class="col-xs-1">
+                <div class="row">
+                    <div class="col-xs-9 filtHead">
+                        <div class="left-column">
+                            <p>Filter Results</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 reset-button">
+                        <a ng-click="!isAnySelectionApplied() || resetSelections()"><img
+                                ng-src="{{isAnySelectionApplied() && '/reset-button-blue.png' || '/reset-button.png'}}"
+                                width="44px" height="44px"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-11 left-border">
+                <div id="search-alerts" class="row">
+                    <div class="search-notifications col-xs-12">
+                        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+                            {{alert.msg}}
+                        </alert>
+                    </div>
+                </div>
+                <div id="search-info" class="resSumm">
+                    <p>{{searchInfo}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <els-facet facet-title="Types" items="filters.type"
+                           on-selection-change="typeSelectionChanged"></els-facet>
+                <els-facet facet-title="Sources" items="filters.source"
+                           on-selection-change="sourceSelectionChanged"></els-facet>
+                <els-date-range min-date="filters.minDate" max-date="filters.maxDate"
+                                on-apply="applyPublicationDateLimits"></els-date-range>
+            </div>
+            <div class="col-xs-9 left-border">
+                <div id="search-results-and-preview" class="row">
+                    <div id="search-results">
+                        <els-result ng-repeat="result in pageOfResults.results" result="result"
+                                    analytics-on="click"
+                                    analytics-event="preview-result|result-{{$index+1}}|{{result.source}}|{{result.id}}"></els-result>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <div class="row text-center" ng-show="loading" aria-hidden="true">
+                            <i class="fa fa-spinner fa-spin"></i>
+                        </div>
+                        <ul class="pager" ng-show="pageOfResults.results && !loading">
+                            <li ng-if="pagesRemaining">
+                                <a ng-click="nextPage(0,0)">
+                                    Show more results <span class="glyphicon glyphicon-menu-right"
+                                                            aria-hidden="true"></span>
+                                </a>
+                            </li>
+                            <li ng-if="!pagesRemaining" class="disabled">
+                                <a>Showing all {{pageOfResults.count}} results</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

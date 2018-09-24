@@ -1,0 +1,59 @@
+
+/* set HTML5 elements as block for IE8 and below */
+
+header, footer, article, aside {
+	display: block;
+}
+body {
+	font-size: 0.8em;
+}
+
+header {
+	height: 190px;
+	background: url(header.png) no-repeat;
+}
+h1 {
+	text-indent: -500em;
+}
+h2 {
+	padding: 0 0 1em;
+	color: #d00;
+	font: 1.4em helvetica,arial,sans-serif;
+}
+p {
+	padding: 0 0 1em;
+	color: #666;
+	font: 1em/1.6em helvetica,arial,sans-serif;
+}
+
+a:hover {
+	color: #0bf;
+}
+strong {
+	font-weight: normal;
+}
+.download {
+	position: absolute;
+	left: 0;
+	top: 140px;
+	width: 700px;
+	text-align: center;
+}
+footer {
+	position: relative;
+	width: 100%;
+	margin: 0;
+}
+
+
+footer p {
+	padding: 95px 0 0;
+	color: #fff;
+	font: 1em helvetica,arial,sans-serif;
+	text-align: center;
+}
+footer p.copyright {
+	padding: 1em 0 0;
+	color: #0060b9;
+	font-size: 0.8em;
+}
